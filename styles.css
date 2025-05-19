@@ -1,0 +1,195 @@
+/* Mobile-first design */
+.app-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.webcam-container {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  overflow: hidden;
+}
+
+#webcam {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.text-display {
+  position: relative;
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.emotion-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  transition: color 0.3s ease;
+  color: #ffffff;
+}
+
+.transcript-text {
+  font-size: 1.2rem;
+  text-align: center;
+  color: white;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-height: 10vh;
+  overflow-y: auto;
+}
+
+.emotion-word-pairs-container {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  background-color: rgba(20, 20, 20, 0.9);
+  overflow-y: auto;
+}
+
+.emotion-word-pairs-container h3 {
+  color: white;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.emotion-word-pairs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.emotion-word-pair {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  background-color: rgba(40, 40, 40, 0.8);
+  border-radius: 4px;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.emotion-word-pair .emotion {
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.emotion-word-pair .word {
+  color: white;
+  font-size: 1.1rem;
+  max-width: 60%;
+  text-align: right;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.loading-text {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.error-message {
+  color: red;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Media queries for larger screens */
+@media (min-width: 768px) {
+  .emotion-text {
+    font-size: 3rem;
+  }
+  
+  .transcript-text {
+    font-size: 1.5rem;
+  }
+  
+  .emotion-word-pair .emotion,
+  .emotion-word-pair .word {
+    font-size: 1.3rem;
+  }
+  
+  .emotion-word-pairs-container h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .emotion-text {
+    font-size: 3.5rem;
+  }
+  
+  .transcript-text {
+    font-size: 1.8rem;
+  }
+  
+  .emotion-word-pair .emotion,
+  .emotion-word-pair .word {
+    font-size: 1.5rem;
+  }
+  
+  .emotion-word-pairs-container h3 {
+    font-size: 1.8rem;
+  }
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+}

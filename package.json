@@ -1,0 +1,25 @@
+{
+  "name": "microexpression-analysis-system",
+  "version": "1.0.0",
+  "description": "Mikromimik Analiz Sistemi - Konuşma esnasında mikromimikleri tespit eden ve kelimelerle eşleştiren web uygulaması",
+  "main": "app.js",
+  "scripts": {
+    "start": "http-server -o"
+  },
+  "keywords": [
+    "microexpression",
+    "facial",
+    "analysis",
+    "emotion",
+    "speech"
+  ],
+  "author": "Manus AI",
+  "license": "MIT",
+  "dependencies": {
+    "face-api.js": "^0.22.2",
+    "@tensorflow/tfjs": "^4.10.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
