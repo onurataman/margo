@@ -1,6 +1,6 @@
 # Mikromimik Analiz Sistemi
 
-Bu proje, konuşma sırasında oluşan kısa süreli yüz ifadelerini (mikromimikler) tespit eden ve bunları konuşulan kelimelerle eşleştiren gelişmiş bir web uygulamasıdır. Paul Ekman'ın mikromimik teorisine dayanan bu sistem, gerçek duyguları yansıtan 1/25 - 1/5 saniye (40-200 ms) süren ifadeleri tespit ederek, uzun süreli (sahte veya bilinçli) mimiklerden ayırt eder.
+Bu React uygulaması, konuşma sırasında oluşan kısa süreli yüz ifadelerini (mikromimikler) tespit eden ve bunları konuşulan kelimelerle eşleştiren gelişmiş bir web uygulamasıdır. Paul Ekman'ın mikromimik teorisine dayanan bu sistem, gerçek duyguları yansıtan 1/25 - 1/5 saniye (40-200 ms) süren ifadeleri tespit ederek, uzun süreli (sahte veya bilinçli) mimiklerden ayırt eder.
 
 ## Özellikler
 
@@ -47,6 +47,17 @@ Sistem, Paul Ekman'ın tanımladığı altı temel duyguyu tespit eder:
 - **Arka Plan**: Mümkünse sade ve az hareketli bir arka plan tercih edin
 - **Ses Seviyesi**: Normal ses seviyesinde konuşun
 
+## Model Dosyaları
+
+Uygulamanın çalışması için face-api.js model dosyalarını `public/models/weights/` klasörüne eklemeniz gerekmektedir. Bu dosyaları şu adresten indirebilirsiniz:
+https://github.com/justadudewhohacks/face-api.js/tree/master/weights
+
+Gerekli model dosyaları:
+- tiny_face_detector_model-shard1
+- tiny_face_detector_model-weights_manifest.json
+- face_expression_model-shard1
+- face_expression_model-weights_manifest.json
+
 ## Teknik Detaylar
 
 Sistem, modüler bir mimariye sahiptir:
@@ -56,17 +67,6 @@ Sistem, modüler bir mimariye sahiptir:
 3. **Konuşma İşleme Modülü**: Ses tanıma ve kelime segmentasyonu
 4. **Senkronizasyon Modülü**: Mikromimik ve kelime eşleştirmesi
 5. **Kullanıcı Arayüzü**: Sonuçların görselleştirilmesi
-
-## Model Dosyaları
-
-Uygulamanın çalışması için face-api.js model dosyalarını `models/weights/` klasörüne eklemeniz gerekmektedir. Bu dosyaları şu adresten indirebilirsiniz:
-https://github.com/justadudewhohacks/face-api.js/tree/master/weights
-
-Gerekli model dosyaları:
-- tiny_face_detector_model-shard1
-- tiny_face_detector_model-weights_manifest.json
-- face_expression_model-shard1
-- face_expression_model-weights_manifest.json
 
 ## Lisans
 
